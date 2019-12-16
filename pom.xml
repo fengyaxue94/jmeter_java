@@ -36,7 +36,12 @@
 			<artifactId>json</artifactId>
 			<version>20080701</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160212</version>
+        </dependency>
+    </dependencies>
 	
 	<build>
 		<finalName>jmeter_java</finalName>
@@ -59,7 +64,8 @@
 						<phase>package</phase>
 						<configuration>
 							<tasks>
-								<copy todir="${env.jmeter_path}/lib/ext">
+								<!--suppress UnresolvedMavenProperty -->
+								<copy todir="${env.JMETER_HOME}/lib/ext">
 									<fileset dir="${project.build.directory}">
 										<include name="jmeter_java.jar" />
 									</fileset>

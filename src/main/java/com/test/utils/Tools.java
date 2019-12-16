@@ -13,7 +13,20 @@ public class Tools {
         }
         System.currentTimeMillis();
     }
-
+    /**
+     * 获取当前时间
+     */
+    /**
+     * jmeter中的postprocesser代码
+     * import com.test.utils.Tools;
+     *
+     * String id = Tools.createIdcard();
+     * String curTime = Tools.getCurrentTime();
+     *
+     * vars.put("id",id);
+     * vars.put("curTime",curTime);
+     * @return
+     */
     public static String getCurrentTime(){
         Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
@@ -85,6 +98,9 @@ public class Tools {
                 "20", "21", "22", "23", "24", "25", "26", "27", "28", "29",
                 "80", "81", "82", "83", "84", "85", "86", "87", "88", "89"
         };
+        /**
+         * 出生年月限制
+         */
         String[] birthYear = {
                 "194", "195", "196", "197", "198"
         };
@@ -123,6 +139,7 @@ public class Tools {
      *
      * @param strArray String[]
      * @return String
+     * 随机函数得到一个身份证号
      */
     private static String getRandomFromArray(String[] strArray) {
         Random random = new Random();
